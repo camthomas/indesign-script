@@ -1,0 +1,27 @@
+var myDoc = app.activeDocument
+
+app.findTextPreferences = app.changeTextPreferences = null
+
+app.findTextPreferences.findWhat = "Banana"
+
+var myFound = myDoc.findText()
+
+for(i=0; i<myFound.length; i++)
+
+{
+
+    if(myFound[i].parent.constructor.name == "Cell")
+
+    {
+
+ 
+
+   myFound[i].parent.appliedCellStyle = "Yellow"
+
+      var overrides = myFound[i].clearOverrides()          //this is the new line added in this content
+
+   
+
+    }
+
+}
